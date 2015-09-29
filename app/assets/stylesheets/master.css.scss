@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -24,4 +26,12 @@ body {
   background:url('/assets/blackorchid.png');
   border-radius: 0;
   box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #E3E85A;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  font-size:26px;
 }
