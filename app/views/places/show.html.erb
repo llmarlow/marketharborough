@@ -67,7 +67,7 @@ function initMap() {
 		</button>
 	</div>
 	<div class="clear"></div>
-<% @place.comments.each do |comment| %>
+  <% @place.comments.each do |comment| %>
   <div class="col-xs-12 col-sm-6">
     <blockquote>
      <% if comment.humanized_rating.present? %>
@@ -78,5 +78,23 @@ function initMap() {
     </blockquote>
   </div>
 <% end %>
-</div>
+  <div class="clear"></div>
+  <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
+  <div class="col-xs-12">
+    <%= f.input :picture %>
+    <%= f.input :caption %>
+    <br/>
+    <%= f.submit "Add a Photo", :class => 'btn btn-primary' %>
+  </div>
+  <% end %>
+  <div class="clear"></div>
+<div class="booyah-box col-xs-10 col-xs-offset-1">
+    <% @place.photos.each do |photo| %>
+        <div class="col-xs-12 col-sm-6">
+          <%= image_tag photo.picture, :class => 'img-responsive img-thumbnail' %>
+          <br/>
+          <p><%= photo.caption %></p>
+        </div>
+    <% end %>
+    </div>
 
